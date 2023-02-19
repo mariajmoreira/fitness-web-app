@@ -1,0 +1,28 @@
+<div class="body">
+    <div class="form">
+        <p class="label">Genero: </p>
+        <input class="box" [(ngModel)]="client.genero">
+    </div>
+    <div class="form">
+        <p class="label">Peso: </p>
+        <input [(ngModel)]="client.peso">
+    </div>
+    <div class="form">
+        <p class="label">Altura: </p>
+        <input [(ngModel)]="client.altura"> 
+    </div>
+    <div class="form">
+        <p class="label">Idade: </p>
+        <input [(ngModel)]="client.idade"> 
+    </div>
+
+<button (click)="taxaMetabolicaBasal()">Calcular</button>
+
+<div>
+    A sua taxa metabolica basal é {{client.taxaMetabolicaBasal}}
+</div>
+
+</div>
+
+
+<app-food-macros></app-food-macros>

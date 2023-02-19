@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="info">
+        <p class="title">Protein</p>
+        <p class="value"> 39g </p>
+    </div>
+    
+    <div class="info middle">
+        <p class="title">Protein</p>
+        <p class="value"> 39g </p>
+    </div>
+    
+    <div class="info">
+        <p class="title">Protein</p>
+        <p class="value"> 39g </p>
+    </div>
+    
+</div>
+
+<div class="icons_wrapper">
+    <ng-container *ngFor="let icon of icons">
+        <div class="drag_container" 
+            igxDrag
+            igxDrop
+            #dragRef
+            id="{{icon.id}}" 
+            (dropped)="onIconDropped($event)" 
+            (dragStart)="dragStartHandler(icon.id)"
+            (ghostCreate)="ghostCreateHandler(dragRef)"
+            (dragEnd)="dragEndHandler(dragRef)"
+            (enter)="onEnterHandler($event)"
+            [ghostClass]="'drag_ghost_class'">
+            <span class="icon_container" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()">
+                <img [src]="icon.url"/>
+            </span>
+        </div>
+    </ng-container> 
+</div>

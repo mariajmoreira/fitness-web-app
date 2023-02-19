@@ -1,0 +1,22 @@
+.body{
+  background-color: #1C1C1E;
+}
+
+.form{
+  display: block;
+}
+
+input{
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+
+input:focus{
+  border:2px solid greenyellow;
+  outline: 1px solid greenyellow;
+  transition: ease-in;
+}
+
+.label{
+  color:aliceblue;
+}
