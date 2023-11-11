@@ -1,0 +1,14 @@
+.app-container{
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  height: 100vh;
+  background-color: red;
+}
+
+.sidebar-container{
+  height: 100vh;
+}
+
+.diet-planner-container{
+
+}

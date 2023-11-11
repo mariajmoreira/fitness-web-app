@@ -1,0 +1,51 @@
+<div class="meal-planner">
+  <div class="w-100">
+    <button class="remove-meal" (click)="removeMeal()">
+      <fa-icon icon="xmark"></fa-icon>
+     </button>
+  </div>
+ <div class="meal-planner-header mb-3">
+  Meal {{meal}}
+
+  <div class="fw-bold text-light responsive-text ms-3 me-3 ">
+    {{total_calories}} kcal
+  </div>
+
+  <div class="flex-center ms-3 macros">
+    <div class="ms-3 macro text-light">
+      <div class="fw-bold responsive-text ">
+        Carbs
+    </div>
+      <div class="flex-center">{{total_carbs}}</div>
+    </div>
+
+    <div class="ms-3 macro text-light">
+      <div class="fw-bold responsive-text">
+        Fats
+      </div>
+      <div class="flex-center">{{total_fats}}</div>
+    </div>
+
+    <div class="ms-3 macro text-light">
+      <div class="fw-bold responsive-text">
+        Protein
+      </div>
+      <div class="flex-center">{{total_protein}}</div>
+    </div>
+  </div>
+
+ </div>
+
+ <ng-container *ngFor="let food of foods">
+  <div class="food-container mb-2">
+    <app-food-container [type]="type" [food]="food" (foodToRemove)="removeFood($event)"></app-food-container>
+  </div>
+
+ </ng-container>
+
+ <button class="add-food" (click)="openModal()">
+  <fa-icon icon="plus"></fa-icon>
+ </button>
+
+
+</div>

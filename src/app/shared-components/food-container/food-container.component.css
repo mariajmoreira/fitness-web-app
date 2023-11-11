@@ -1,0 +1,45 @@
+.macro{
+  background-color: #AAFF00;
+  padding: 10px;
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.flex-end{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% auto 10% auto 20%;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.responsive-text{
+font-size: 1rem;
+}
+
+.form-control{
+  min-width: 20px;
+  max-width: 50px;
+  font-size: 0.8rem;
+}
+
+.form-select{
+  font-size: 0.8rem;
+}
+
+.input-group{
+  height: 20px;
+}

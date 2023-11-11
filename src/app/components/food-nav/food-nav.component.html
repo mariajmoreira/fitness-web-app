@@ -1,0 +1,22 @@
+
+<div mat-dialog-title>
+  <h2 style="float: left;">Alimentos</h2>
+    <fa-icon icon="xmark" mat-icon-button mat-dialog-close style="float: right;"></fa-icon>
+</div>
+
+<div class="ms-3 me-3">
+<mat-form-field appearance="fill" class="w-100 matFormField">
+  <mat-label>Search countries by name</mat-label>
+  <input matInput [(ngModel)]="searchTerm" (input)="filter()"/>
+  <fa-icon icon="magnifying-glass" class="ms-1" matPrefix>search</fa-icon>
+</mat-form-field>
+
+<ng-container *ngFor="let food of filtered_foods">
+
+<div mat-dialog-content
+class="food-info-wrapper"
+>
+ <app-food-container [type]="type" [food]="food" (selectedFood)="addFood($event)" > </app-food-container>
+</div>
+</ng-container>
+</div>

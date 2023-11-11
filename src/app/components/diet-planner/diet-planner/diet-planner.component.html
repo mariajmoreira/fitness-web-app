@@ -1,0 +1,16 @@
+<div style="background-color: blueviolet;">
+  <div class="diet-planner">
+
+      <div style="border:1px solid slategrey; color:aliceblue">
+        Diet Name
+      </div>
+
+      <div *ngFor="let meal of meals" class="mb-3">
+        <app-meal-planner [meal]="meal" (removeMealEvent)="removeMeal($event)"></app-meal-planner>
+      </div>
+
+      <button class="add-meal" (click)="addMeal()">
+       <fa-icon icon="plus"></fa-icon>
+      </button>
+  </div>
+</div>

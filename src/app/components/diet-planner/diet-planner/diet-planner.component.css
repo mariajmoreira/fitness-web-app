@@ -1,0 +1,19 @@
+.diet-planner{
+  background-color: rgb(48, 47, 47);
+  height:500px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.add-meal{
+  margin:auto;
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+  border:1px solid white;
+background-color: pink;
+color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
