@@ -19,7 +19,7 @@
 .responsive-text{
   font-size: 1rem;
   justify-content: center;
-  
+
   }
 
 .macro{
@@ -67,3 +67,41 @@
 }
 
 
+.client-diet-meal{
+  margin: auto;
+  width: 80%;
+  border:1px solid white;
+  color:white;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.meal-header{
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+}
+
+.vertical-input{
+  position: absolute;
+  width: 100px;
+  transform: rotate(90deg);
+}
+
+.meal-container{
+ display: grid;
+ grid-template-rows: auto auto;
+ padding: 10px;
+
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+th, td{
+  text-align: center;
+}

@@ -22,6 +22,8 @@ import { DietPlannerComponent } from './components/diet-planner/diet-planner/die
 import { MealPlannerComponent } from './components/diet-planner/meal-planner/meal-planner.component';
 import { MenuSidebarComponent } from './components/sidebar/menu-sidebar/menu-sidebar.component';
 import { FoodContainerComponent } from './shared-components/food-container/food-container.component';
+import { ClientDietComponent } from './components/client-diet/client-diet.component';
+import { DashIfEmptyPipePipe } from './resources/pipes/dash-if-empty-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FoodContainerComponent } from './shared-components/food-container/food-
     DietPlannerComponent,
     MealPlannerComponent,
     MenuSidebarComponent,
-    FoodContainerComponent
+    FoodContainerComponent,
+    ClientDietComponent,
+    DashIfEmptyPipePipe
   ],
   imports: [
     BrowserModule,

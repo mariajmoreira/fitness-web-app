@@ -1,0 +1,32 @@
+.client-diet{
+  background-color: rgb(48, 47, 47);
+  height:500px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.client-diet-meal{
+  margin: auto;
+  width: 80%;
+  border:1px solid white;
+  color:white;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.meal-header{
+  padding: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform:rotate(180deg);
+  background-color: green;
+}
+
+.meal-container{
+ display: grid;
+ grid-template-rows: auto auto;
+ padding: 10px;
+
+}
+
+

@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Output, EventEmitter, Input, Inject} from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ApiService } from 'src/app/resources/api.service';
 import { ViewEncapsulation } from '@angular/core';
+import { Food } from 'src/app/resources/models/Food';
 
 @Component({
   selector: 'app-food-nav',
@@ -11,50 +12,42 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class FoodNavComponent implements OnInit {
 
-  @Output() addFoodEvent = new EventEmitter<string>();
-  @Output() removeFoodEvent = new EventEmitter<string>();
+  @Output() addFoodEvent = new EventEmitter<Food>();
+  @Output() removeFoodEvent = new EventEmitter<Food>();
+
+  @Input() loaded_data : Food[];
 
   type:any = "foodnav"
 
-  foods :any = []
-  filtered_foods :any = []
+  foods :Food[] = []
+  filtered_foods :Food[] = []
   searchTerm:any;
 
   selected_food:any;
 
-  constructor(private apiService:ApiService,public dialogRef: MatDialogRef<FoodNavComponent>) {}
+  constructor(private apiService:ApiService,public dialogRef: MatDialogRef<FoodNavComponent>,  @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.foods=data;
+    this.filtered_foods=data;
+  }
 
 
 
   ngOnInit(): void {
-    this.getFoods()
+  //  this.getFoods()
 
   }
 
-  getFoods(){
-    this.apiService.getFoods().subscribe(
-      {
-        next: (response:any) => {
-          this.foods = response;
-          this.filtered_foods = this.foods
-        },
-        error: (err) => {
-          alert(JSON.stringify(err))
-        }
-      }
-    )
 
-  }
 
   filter(){
     this.filtered_foods = this.foods.filter( (food :any) => (food.name.toLowerCase()).includes(this.searchTerm))
   }
 
-  addFood(food:any){
+  addFood(food:Food){
     this.addFoodEvent.emit(food)
   }
 
-  removeFood(food:any){
+  removeFood(food:Food){
     this.removeFoodEvent.emit(food)
   }
 

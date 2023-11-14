@@ -6,7 +6,7 @@
       </div>
 
       <div *ngFor="let meal of meals" class="mb-3">
-        <app-meal-planner [meal]="meal" (removeMealEvent)="removeMeal($event)"></app-meal-planner>
+        <app-meal-planner [loaded_food]="loaded_food" [meal]="meal" (removeMealEvent)="removeMeal($event)"></app-meal-planner>
       </div>
 
       <button class="add-meal" (click)="addMeal()">

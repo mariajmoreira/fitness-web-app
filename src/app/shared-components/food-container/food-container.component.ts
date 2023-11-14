@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Food } from 'src/app/resources/models/Food';
 
 @Component({
   selector: 'app-food-container',
@@ -7,8 +8,10 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FoodContainerComponent implements OnInit{
 
-  @Input() food : any;
+  @Input() food : Food;
   @Input() type : any;
+
+  updatedFood : Food = new Food();
   quantity :any;
   carbs:any;
   protein:any;
@@ -23,19 +26,19 @@ export class FoodContainerComponent implements OnInit{
   }
 
   ngOnInit() :void{
-    this.quantity = this.food.quantidade
+    this.updatedFood.quantidade = this.food.quantidade
     this.calories=this.food.calories;
-    this.carbs=this.food.carbs.replace(/,/, '.');
-    this.protein=this.food.protein.replace(/,/, '.');
-    this.fats=this.food.fats.replace(/,/, '.');
+    this.carbs=this.food.carbs;
+    this.protein=this.food.protein;
+    this.fats=this.food.fats;
   }
 
   macroRecalculation(){
     console.log("recalculating")
-    this.calories = (parseFloat(this.food.quantidade) * parseFloat(this.food.calories))/this.quantity
-    this.carbs = (this.food.quantidade * parseFloat(this.food.carbs.replace(/,/, '.')))/this.quantity
-    this.protein = (this.food.quantidade * parseFloat(this.food.protein.replace(/,/, '.')))/this.quantity
-    this.fats = (this.food.quantidade * parseFloat(this.food.fats.replace(/,/, '.')))/this.quantity
+    this.calories = ((this.food.quantidade) * (this.food.calories))/this.quantity
+    this.carbs = (this.food.quantidade * (this.food.carbs))/this.quantity
+    this.protein = (this.food.quantidade * (this.food.protein))/this.quantity
+    this.fats = (this.food.quantidade * (this.food.fats))/this.quantity
   }
 
   sendFood(){

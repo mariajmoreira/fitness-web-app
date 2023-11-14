@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { Food } from './models/Food';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ApiService {
 
 
   getFoods(){
-    return this.http.get<any>(this.host + 'foods',this.headers)
+    return this.http.get<Food[]>(this.host + 'foods',this.headers)
   }
 
   getFoodById(id :any){

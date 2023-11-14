@@ -1,4 +1,4 @@
-<div class="meal-planner">
+<!-- <div class="meal-planner">
   <div class="w-100">
     <button class="remove-meal" (click)="removeMeal()">
       <fa-icon icon="xmark"></fa-icon>
@@ -34,18 +34,77 @@
     </div>
   </div>
 
- </div>
+ </div> -->
+ <div class="client-diet-meal mb-3">
+    <div class="meal-header">
+    <div *ngIf="meal.name!='' &&meal.name!='default' &&meal.name!=null && meal.name!=undefined">
+      {{meal.name}}
+    </div>
+    <input type="text" class="vertical-input" [(ngModel)]="meal.name"
+    *ngIf="meal.name=='' ||meal.name=='default' ||meal.name==null || meal.name==undefined">
+    </div>
+    <div class="meal-container">
+      <table>
+        <tr>
+          <th>Alimento</th>
+          <th>Quantidade</th>
+          <th>Calorias</th>
+          <th>Protein</th>
+          <th>Carbs</th>
+          <th>Fats</th>
 
- <ng-container *ngFor="let food of foods">
+        </tr>
+        <ng-container  *ngIf="meal.foods.length>0"  >
+        <tr *ngFor="let food of meal.foods">
+
+          <td>  {{food.name}}</td>
+          <td> {{food.quantidade }}</td>
+          <td> {{food.calories }}</td>
+          <td>  {{food.protein }}</td>
+          <td>  {{food.carbs }}</td>
+          <td>  {{food.fats }}</td>
+          <td> <fa-icon icon="trash"></fa-icon></td>
+
+        </tr>
+      </ng-container>
+
+        <tr *ngIf="meal.foods.length<=0" >
+
+          <td> - </td>
+          <td> -</td>
+          <td> -</td>
+          <td> - </td>
+          <td> -</td>
+          <td> -</td>
+
+        </tr>
+
+        <tr>
+
+          <td colspan="2"> Total </td>
+
+          <td>{{total_calories}}</td>
+          <td>{{total_protein}}</td>
+          <td>{{total_carbs}}</td>
+          <td>{{total_fats}}</td>
+
+        </tr>
+
+      </table>
+      <button class="mt-2 add-food" (click)="openModal()">
+        <fa-icon icon="plus"></fa-icon>
+       </button>
+    </div>
+  </div>
+
+<!--  <ng-container *ngFor="let food of foods">
   <div class="food-container mb-2">
     <app-food-container [type]="type" [food]="food" (foodToRemove)="removeFood($event)"></app-food-container>
   </div>
 
- </ng-container>
-
- <button class="add-food" (click)="openModal()">
-  <fa-icon icon="plus"></fa-icon>
- </button>
+ </ng-container> -->
 
 
-</div>
+
+
+
