@@ -6,6 +6,7 @@ import { User } from './resources/models/User';
 import { Diet } from './resources/models/Diet';
 import { Meal } from './resources/models/Meal';
 import { Food } from './resources/models/Food';
+import { Goal } from './resources/models/Goal';
 
 @Component({
   selector: 'app-root',
@@ -21,33 +22,33 @@ export class AppComponent implements OnInit {
       id: 624,
       name: "Abacate",
       category: "Frutos e produtos derivados de frutos",
-      calories:114,
-      carbs: 2.3,
-      protein: 1.1,
-      fats: 10.5,
-      quantidade: 100
+      calories:'114',
+      carbs: '2.3',
+      protein: '1.1',
+      fats: '10.5',
+      quantidade: '100'
     }
 
     food2 : Food= {
       id: 624,
       name: "Arroz",
       category: "Carbohidrato simples",
-      calories:114,
-      carbs: 2.3,
-      protein: 1.1,
-      fats: 10.5,
-      quantidade: 100
+      calories:'114',
+      carbs: '2.3',
+      protein: '1.1',
+      fats: '10.5',
+      quantidade: '100'
     }
 
     food3: Food= {
       id: 624,
       name: "Frango",
       category: "Carne",
-      calories:114,
-      carbs: 2.3,
-      protein: 1.1,
-      fats: 10.5,
-      quantidade: 100
+      calories:'114',
+      carbs: '2.3',
+      protein:' 1.1',
+      fats: '10.5',
+      quantidade: '100'
     }
 
 
@@ -63,9 +64,18 @@ export class AppComponent implements OnInit {
     foods : [this.food1, this.food2, this.food3]
   }
 
+  goal:Goal={
+    protein:140,
+    carbs:140,
+    fats:40,
+    calories:1500
+  }
+
   diet: Diet = {
     name: `Dieta 1ª Mês`,
+    user:'Carolina',
     id: 1,
+    goal:this.goal,
     meals : [this.meal1,this.meal2]
   }
 
@@ -103,7 +113,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  
+
 
 
 

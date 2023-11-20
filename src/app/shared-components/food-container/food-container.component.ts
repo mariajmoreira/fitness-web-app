@@ -4,7 +4,7 @@ import { Food } from 'src/app/resources/models/Food';
 @Component({
   selector: 'app-food-container',
   templateUrl: './food-container.component.html',
-  styleUrls: ['./food-container.component.css']
+  styleUrls: ['./food-container.component.css','../../app.component.css']
 })
 export class FoodContainerComponent implements OnInit{
 
@@ -21,6 +21,8 @@ export class FoodContainerComponent implements OnInit{
   @Output() selectedFood =  new EventEmitter<any>();
   @Output() foodToRemove =  new EventEmitter<any>();
 
+  isIconPlus: boolean = true;
+
   constructor(){
 
   }
@@ -35,10 +37,10 @@ export class FoodContainerComponent implements OnInit{
 
   macroRecalculation(){
     console.log("recalculating")
-    this.calories = ((this.food.quantidade) * (this.food.calories))/this.quantity
-    this.carbs = (this.food.quantidade * (this.food.carbs))/this.quantity
-    this.protein = (this.food.quantidade * (this.food.protein))/this.quantity
-    this.fats = (this.food.quantidade * (this.food.fats))/this.quantity
+    this.calories = (parseFloat(this.food.quantidade.replace(/,/g,'.')) * parseFloat(this.food.calories.replace(/,/g,'.')))/this.quantity
+    this.carbs = (parseFloat(this.food.quantidade.replace(/,/g,'.')) * parseFloat(this.food.carbs.replace(/,/g,'.')))/this.quantity
+    this.protein = (parseFloat(this.food.quantidade.replace(/,/g,'.')) * parseFloat(this.food.protein.replace(/,/g,'.')))/this.quantity
+    this.fats = (parseFloat(this.food.quantidade.replace(/,/g,'.')) * parseFloat(this.food.fats.replace(/,/g,'.')))/this.quantity
   }
 
   sendFood(){
@@ -53,5 +55,11 @@ export class FoodContainerComponent implements OnInit{
     this.foodToRemove.emit(this.food)
   }
 
+  toggleIcon() {
+    this.isIconPlus = !this.isIconPlus;
+    if(!this.isIconPlus){
+      this.sendFood()
+    }
+  }
 
 }

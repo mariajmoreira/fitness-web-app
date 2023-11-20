@@ -1,16 +1,55 @@
-<div style="background-color: blueviolet;">
-  <div class="diet-planner">
+<div class="diet-planner">
 
-      <div style="border:1px solid slategrey; color:aliceblue">
-        Diet Name
-      </div>
-
-      <div *ngFor="let meal of meals" class="mb-3">
-        <app-meal-planner [loaded_food]="loaded_food" [meal]="meal" (removeMealEvent)="removeMeal($event)"></app-meal-planner>
-      </div>
-
-      <button class="add-meal" (click)="addMeal()">
-       <fa-icon icon="plus"></fa-icon>
+  <div class="diet-header mb-5">
+    <div *ngIf="!editDietName" class=" ms-3">
+      {{newDiet.name}}
+      <button (click)="editDietName=true" class="btn btn-outline-success btn-sm ms-2">
+        <fa-icon icon="pencil"></fa-icon>
       </button>
+    </div>
+    <div *ngIf="editDietName" class="d-flex ms-3">
+      <input type="text" class="my-input me-2" [(ngModel)]="newDiet.name">
+      <button (click)="editDietName=false" class="my-btn">
+        <fa-icon icon="check"></fa-icon>
+      </button>
+    </div>
+
+    <div class="macro-charts-container">
+      <app-protein-chart [macro_used]="current.protein" [macro_left]="goal.protein-current.protein"></app-protein-chart>
+      <app-fats-chart [macro_used]="current.fats" [macro_left]="goal.fats-current.fats"></app-fats-chart>
+      <app-carbs-chart [macro_used]="current.carbs" [macro_left]="goal.carbs-current.carbs"></app-carbs-chart>
+    </div>
+
+    <div class="diet-progress-bar">
+
+      <mat-progress-bar [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+      </mat-progress-bar>
+      <div class="current-progress d-flex">
+        <div style="color:var(--green)">{{current.calories}}</div>
+        <div style="color:var(--border)"> / {{goal.calories}}</div>
+      </div>
+    </div>
+
   </div>
+
+
+
+
+  <ng-container *ngIf="meals.length>=0">
+    <div *ngFor="let meal of meals; let i=index" class="mb-3">
+      <app-meal-planner [loaded_food]="loaded_food" [meal]="meal" [meal_index]="i" (setMealGoal)="receiveMealGoal($event)"
+        (removeMealEvent)="removeMeal($event)"></app-meal-planner>
+    </div>
+  </ng-container>
+
+<!--
+  <ng-container *ngIf="meals.length==0">
+    static
+    <app-meal-planner [loaded_food]="loaded_food" (removeMealEvent)="removeMeal($event)" (setMealGoal)="receiveMealGoal($event)"></app-meal-planner>
+  </ng-container> -->
+
+  <button class="add-meal" (click)="addMeal()">
+    <fa-icon icon="plus" class="me-3"></fa-icon>
+    Adicionar refeição
+  </button>
 </div>

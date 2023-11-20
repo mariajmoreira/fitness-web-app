@@ -1,9 +1,18 @@
+.macros{
+  display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+}
+
 .macro{
-  background-color: #AAFF00;
+  background-color: var(--green);
   padding: 10px;
   border-radius: 15px;
-  width: fit-content;
+  text-align: center;
+  width: 80px;
 }
+
+
 
 .flex-center{
   display: flex;
@@ -21,7 +30,7 @@
 .grid{
   width: 100%;
   display: grid;
-  grid-template-columns: 20% auto 10% auto 20%;
+  grid-template-columns: 200px 20% 300px 80px;
   grid-gap: 10px;
   align-items: center;
 }
@@ -42,4 +51,37 @@ font-size: 1rem;
 
 .input-group{
   height: 20px;
+}
+
+
+
+
+
+
+.icon {
+  transition: transform 0.5s ease;
+}
+
+@keyframes plusToCheck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes checkToPlus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

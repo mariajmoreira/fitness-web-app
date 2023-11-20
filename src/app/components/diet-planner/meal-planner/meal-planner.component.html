@@ -35,67 +35,76 @@
   </div>
 
  </div> -->
- <div class="client-diet-meal mb-3">
-    <div class="meal-header">
-    <div *ngIf="meal.name!='' &&meal.name!='default' &&meal.name!=null && meal.name!=undefined">
+<div class="meal-planner mb-3">
+  <div class="meal-header">
+    <div *ngIf="!editMealName" class=" ms-3">
       {{meal.name}}
-    </div>
-    <input type="text" class="vertical-input" [(ngModel)]="meal.name"
-    *ngIf="meal.name=='' ||meal.name=='default' ||meal.name==null || meal.name==undefined">
-    </div>
-    <div class="meal-container">
-      <table>
-        <tr>
-          <th>Alimento</th>
-          <th>Quantidade</th>
-          <th>Calorias</th>
-          <th>Protein</th>
-          <th>Carbs</th>
-          <th>Fats</th>
+      <button (click)="editMealName=true" class="btn btn-outline-success btn-sm ms-2">
+        <fa-icon icon="edit"></fa-icon>
+      </button>
 
-        </tr>
-        <ng-container  *ngIf="meal.foods.length>0"  >
+    </div>
+    <div *ngIf="editMealName" class="d-flex ms-3">
+      <input type="text" class="my-input me-2" [(ngModel)]="meal.name">
+      <button (click)="editMealName=false" class="my-btn">
+        <fa-icon icon="check"></fa-icon>
+      </button>
+    </div>
+  </div>
+  <div class="meal-container">
+    <table>
+      <tr>
+        <th>Alimento</th>
+        <th>Quantidade</th>
+        <th>Calorias</th>
+        <th>Protein</th>
+        <th>Carbs</th>
+        <th>Fats</th>
+
+      </tr>
+      <ng-container *ngIf="meal.foods.length>0">
         <tr *ngFor="let food of meal.foods">
 
-          <td>  {{food.name}}</td>
+          <td> {{food.name}}</td>
           <td> {{food.quantidade }}</td>
           <td> {{food.calories }}</td>
-          <td>  {{food.protein }}</td>
-          <td>  {{food.carbs }}</td>
-          <td>  {{food.fats }}</td>
-          <td> <fa-icon icon="trash"></fa-icon></td>
+          <td> {{food.protein }}</td>
+          <td> {{food.carbs }}</td>
+          <td> {{food.fats }}</td>
+          <td><button class="btn-sm my-btn" (click)="removeFood(food)"> <fa-icon icon="xmark"></fa-icon></button></td>
 
         </tr>
       </ng-container>
 
-        <tr *ngIf="meal.foods.length<=0" >
+      <tr *ngIf="meal.foods.length<=0">
 
-          <td> - </td>
-          <td> -</td>
-          <td> -</td>
-          <td> - </td>
-          <td> -</td>
-          <td> -</td>
+        <td> - </td>
+        <td> -</td>
+        <td> -</td>
+        <td> - </td>
+        <td> -</td>
+        <td> -</td>
 
-        </tr>
+      </tr>
 
-        <tr>
+      <tr class="space-above">
 
-          <td colspan="2"> Total </td>
+        <td colspan="2" style="text-align: end;"> Total </td>
 
-          <td>{{total_calories}}</td>
-          <td>{{total_protein}}</td>
-          <td>{{total_carbs}}</td>
-          <td>{{total_fats}}</td>
+        <td>{{meal_macros[1]}}</td>
+        <td>{{meal_macros[2]}}</td>
+        <td>{{meal_macros[3]}}</td>
+        <td>{{meal_macros[4]}}</td>
 
-        </tr>
+      </tr>
 
-      </table>
-      <button class="mt-2 add-food" (click)="openModal()">
-        <fa-icon icon="plus"></fa-icon>
-       </button>
-    </div>
+    </table>
+    <button class="mt-2 add-food" (click)="openModal()">
+      <fa-icon icon="plus" class="me-3"></fa-icon>
+      Adicionar alimento
+    </button>
   </div>
+</div>
 
 <!--  <ng-container *ngFor="let food of foods">
   <div class="food-container mb-2">
@@ -103,8 +112,3 @@
   </div>
 
  </ng-container> -->
-
-
-
-
-

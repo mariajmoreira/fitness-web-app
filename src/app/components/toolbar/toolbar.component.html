@@ -1,0 +1,37 @@
+<div class="toolbar-container">
+
+  <div class="client-info">
+    <div>Carolina machado</div>
+    <div>Peso:</div>
+    <div>Altura:</div>
+    <div>Idade:</div>
+  </div>
+
+  <div class="macro-distribution">
+    <div class="macro-inputs">
+      <div>
+        <label for="Calories">Calories</label>
+        <input type="number" id="calories" class="macro-input" [(ngModel)]="goal.calories">
+      </div>
+
+      <div>
+        <label for="protein">Protein</label>
+        <input type="number" id="protein" class="macro-input" [(ngModel)]="goal.protein">
+      </div>
+
+      <div>
+        <label for="fats">Fats</label>
+        <input type="number" id="fats" class="macro-input" [(ngModel)]="goal.fats">
+      </div>
+
+      <div>
+        <label for="carbs">Carbs</label>
+        <input type="number" id="carbs" class="macro-input" [(ngModel)]="goal.carbs">
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-container mt-3">
+    <app-pie-chart [protein]="goal.protein" [fats]="goal.fats" [carbs]="goal.carbs"></app-pie-chart>
+  </div>
+</div>

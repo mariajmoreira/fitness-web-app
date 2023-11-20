@@ -1,27 +1,33 @@
 .sidebar-wrapper{
-  background-color: aqua;
-  padding: 10px;
+  background-color: var( --dark-grey);
   height: 100vh;
+  border-radius: 5px;
+
 }
 
 .sidebar{
-  border-radius: 5px;
-  background-color: blue;
-  height: 100%;
-  padding: 15px;
+  padding: 5px;
+  display: grid;
+  row-gap: 10px ;
 }
 
-button{
-  width: 100%;
-  background-color:#0a0a23;
-    color: #fff;
-    border:none;
-    border-radius:10px;
-    padding:15px;
-    min-height:30px;
-    min-width: 120px;
+.my-btn, .my-btn-selected{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--border);
+  font-size:larger;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
 }
 
-button:focus{
-  background-color:red;
+.my-btn:hover{
+  outline: none;
+  border: none;
+  background-color: var(--dark-grey-secondary);
+  color: white;
+  font-size:larger;
 }
+
+

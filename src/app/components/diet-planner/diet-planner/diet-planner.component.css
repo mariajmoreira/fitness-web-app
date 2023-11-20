@@ -1,19 +1,75 @@
 .diet-planner{
-  background-color: rgb(48, 47, 47);
-  height:500px;
-  margin: auto;
+
+   background-color: var(--dark-grey-secondary);
+ /* border: solid 1px var(--border); */
+ box-shadow: rgba(168, 232, 64, 0.12) 0px 2px 4px 0px, rgba(168, 232, 64, 0.32) 0px 2px 16px 0px;
   border-radius: 5px;
+  padding: 5px;
+  min-height: 600px;
+
+}
+
+.diet-header{
+  /* border-bottom: solid 1px var(--border); */
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* justify-content: flex-start; */
+  align-items: center;
+  width: 100%;
+}
+
+.my-input{
+  width: auto;
+  border-radius: 5px;
+  background-color: var(--grey);
+  border: solid 1px var(--border);
+ /*  width: 100px; */
+ /*  transform: rotate(90deg); */
 }
 
 .add-meal{
   margin:auto;
   width: 80%;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
-  border:1px solid white;
-background-color: pink;
+  border:1px solid var(--border);
+background-color: var(--green);
 color:white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.diet-progress-bar{
+  display: grid;
+    grid-template-columns: 300px 100px;
+    column-gap: 10px;
+    justify-content: end;
+    align-items: center;
+}
+
+.current-progress{
+  font-size: smaller;
+}
+
+
+.mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: var(--green);
+  --mdc-linear-progress-track-color: rgba(255,255,255,0.25);
+}
+
+.diet-info{
+  display: grid;
+    grid-template-rows: auto auto;
+    width: min-content;
+}
+
+.macro-charts-container{
+/*   background-color: var(--grey);
+    border: solid 1px var(--border); */
+    border-radius: 5px;
+    width: min-content;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
 }

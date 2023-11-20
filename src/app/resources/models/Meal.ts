@@ -7,7 +7,7 @@ export class Meal {
   foods:Food[];
 
   constructor(){
-    this.name='default'
-    this.foods = []
+    this.name='';
+    this.foods= [];
   }
 }

@@ -1,0 +1,44 @@
+.client-info{
+  color:white
+}
+
+.toolbar-container{
+  width: 100%;
+  background-color: var(--dark-grey-secondary);
+  border-radius:5px;
+  min-height: 600px
+}
+
+.macro-distribution{
+  color:white;
+
+}
+
+.macro-inputs{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  column-gap: 10px;
+  justify-content: center;
+  color:white;
+}
+
+
+.macro-input{
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--grey);
+  border: solid 1px var(--border);
+ /*  width: 100px; */
+ /*  transform: rotate(90deg); */
+}
+
+input{color:white}
+
+.chart-container{
+/*   background-color: var(--grey);
+  border: solid 1px var(--border);
+  border-radius: 5px; */
+  width: 80%;
+  height:200px;
+  margin: auto;
+}

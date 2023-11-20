@@ -1,39 +1,46 @@
-{{food | json }}
+<!-- {{food | json }} -->
 <div class=" grid" *ngIf="food">
-<div class="fw-bold text-light responsive-text" style="float: left;"> {{food.name}}</div>
+<div class="d-grid">
+<div class="fw-bold text-light responsive-text" style="float: left;">
+  {{food.name}}
+</div>
+<div class="" style="float: left; font-size: smaller; color: white;">
+  {{food.quantidade}} gramas
+</div>
+</div>
 
-<span class="input-group me-3">
+<!-- <span class="input-group me-3">
   <input type="text" class="form-control" aria-label="Text input with dropdown button" [defaultValue]="food.quantidade"
   [(ngModel)]="food.quantidade"
   (ngModelChange)="macroRecalculation()"
-  >
+  > -->
  <!--  <button class="btn btn-outoptionne-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> -->
-  <select class="form-select">
+ <!--  <select class="form-select">
     <option><a class="dropdown-item" >Gramas</a></option>
     </select>
-</span>
+</span> -->
 
 
   <div class="fw-bold text-light responsive-text ms-3 me-3 ">
     {{food.calories}} kcal
   </div>
 
-  <div class="flex-center ms-3">
-  <div class="ms-3 macro text-light">
+  <div class="macros ms-3">
+  <div class=" macro text-light">
     <div class="fw-bold responsive-text ">
       Carbs
   </div>
     <div class="flex-center">{{food.carbs}}</div>
   </div>
 
-  <div class="ms-3 macro text-light">
+  <div class=" macro text-light">
     <div class="fw-bold responsive-text">
       Protein
     </div>
     <div class="flex-center">{{food.protein}}</div>
   </div>
 
-  <div class="ms-3 macro text-light">
+  <div class=" macro text-light">
     <div class="fw-bold responsive-text">
       Fats
     </div>
@@ -41,13 +48,18 @@
   </div>
 </div>
 
-<button *ngIf="type=='foodnav'" (click)="sendFood()">
+<div>
+  <button (click)="toggleIcon()" class="my-btn">
+    <fa-icon [icon]="isIconPlus ? 'plus' : 'check'" class="icon"></fa-icon>
+  </button>
+
+<!-- <button *ngIf="type=='foodnav'" (click)="sendFood()" class="my-btn">
 <fa-icon icon="plus"></fa-icon>
 </button>
 
-<button *ngIf="type=='mealplanner'" (click)="removeFood()">
+<button *ngIf="type=='mealplanner'" (click)="removeFood()" class="my-btn">
   <fa-icon icon="xmark"></fa-icon>
-  </button>
-
+  </button> -->
+</div>
 
 </div>

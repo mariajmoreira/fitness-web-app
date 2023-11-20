@@ -2,7 +2,8 @@
 {
   width: 80%;
   height: auto;
-  border:1px solid white;
+  background-color: var(--dark-grey-secondary);
+  border: 1px solid var(--border);
   border-radius:5px;
   padding: 5px;
   margin: auto;
@@ -62,8 +63,20 @@
 }
 
 .add-food{
+  padding: 5px;
   width: 100%;
   border-radius: 5px;
+  background-color: var(--grey);
+  border: solid 1px var(--border);
+  color:var(--border)
+}
+
+.add-food:hover{
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--grey);
+  border: solid 1px white;
+  color:white
 }
 
 
@@ -72,23 +85,27 @@
   width: 80%;
   border:1px solid white;
   color:white;
-  display: grid;
-  grid-template-columns: 10% 90%;
+ /*  display: grid;
+  grid-template-columns: 10% 90%; */
 }
 
 .meal-header{
   position: relative;
-  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: green;
+ border-bottom: 1px solid var(--border);
+  width: 100%;
+  height: 50px;
 }
 
-.vertical-input{
-  position: absolute;
-  width: 100px;
-  transform: rotate(90deg);
+.my-input{
+  width: auto;
+  border-radius: 5px;
+  background-color: var(--grey);
+  border: solid 1px var(--border);
+ /*  width: 100px; */
+ /*  transform: rotate(90deg); */
 }
 
 .meal-container{
@@ -98,8 +115,12 @@
 
 }
 
+tr.space-above>td {
+  padding-top: 1em;
+}
+
 table, td, th {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 th, td{

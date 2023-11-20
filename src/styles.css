@@ -1,10 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root{
+  --dark-grey: #131416;
+  --dark-grey-secondary: #1B1C1F;
+  --grey:#222326;
+  --border:#8d8d8d;
+  --green: #A8E840;
+}
+
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.custom-dialog .mat-dialog-container{
-  overflow-y: hidden !important;
+
+
+.mdc-dialog__surface {
+  background-color: var(--dark-grey) !important;
+  overflow-y: scroll !important;
 }
+
+::-webkit-scrollbar {
+  display:none;
+}
+
+
+
 
 

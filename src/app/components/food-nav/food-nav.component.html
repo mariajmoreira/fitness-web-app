@@ -1,15 +1,16 @@
 
-<div mat-dialog-title>
+<div mat-dialog-title class="mt-3" style="color: white">
   <h2 style="float: left;">Alimentos</h2>
     <fa-icon icon="xmark" mat-icon-button mat-dialog-close style="float: right;"></fa-icon>
 </div>
 
-<div class="ms-3 me-3">
-<mat-form-field appearance="fill" class="w-100 matFormField">
+<div class="ms-3 me-3 ">
+<!-- <mat-form-field appearance="fill" class="w-100 matFormField">
   <mat-label>Search countries by name</mat-label>
   <input matInput [(ngModel)]="searchTerm" (input)="filter()"/>
   <fa-icon icon="magnifying-glass" class="ms-1" matPrefix>search</fa-icon>
-</mat-form-field>
+</mat-form-field> -->
+<input class="my-input mb-3" [(ngModel)]="searchTerm" (input)="filter()"/>
 
 <ng-container *ngFor="let food of filtered_foods">
 
