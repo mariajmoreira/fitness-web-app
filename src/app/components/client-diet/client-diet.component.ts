@@ -1,3 +1,4 @@
+import { Client } from 'src/app/resources/models/Client';
 import { Diet } from './../../resources/models/Diet';
 import { Component, Input } from '@angular/core';
 
@@ -7,13 +8,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./client-diet.component.css']
 })
 export class ClientDietComponent {
-  @Input() user;
 
-  diet: Diet;
+  @Input() diet:Diet;
+
+
+  @Input() client:Client;
+
+
 
   ngOnInit(){
    // this.diet = this.user.diet
-    alert(JSON.stringify(this.user))
+    //alert(JSON.stringify(this.user))
 
   }
 }

@@ -1,6 +1,7 @@
 .chart-container {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 canvas {
@@ -13,5 +14,5 @@ canvas {
   font-size: x-small;
   margin: 0;
   position: absolute;
-  top: 32px;
+  bottom: 8px;
 }

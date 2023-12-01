@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root{
-  --dark-grey: #131416;
+  --dark-grey: #0a0b0b;
   --dark-grey-secondary: #1B1C1F;
   --grey:#222326;
   --border:#8d8d8d;
@@ -24,7 +24,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display:none;
 }
 
+.my-btn{
+  outline: none;
+  border: none;
+  color: grey;
+  background-color: transparent;
+}
 
+.my-btn:hover{
+  color: white;
+}
 
 
 

@@ -1,0 +1,51 @@
+<div class="auth">
+  <div class="signup">
+    <h1>SIGN UP</h1>
+    <form #signUpForm="ngForm" class="common-form">
+      <input type="text" class="form-input" placeholder="Enter username" name="username" ngModel>
+      <input type="text" class="form-input" placeholder="Enter e-mail" name="email" ngModel>
+      <input type="password" class="form-input" placeholder="Enter password" name="password" ngModel>
+      <div class="grid-wh">
+        <input type="text" class="form-input" placeholder="Primeiro nome" name="firstname" ngModel>
+        <input type="text" class="form-input" placeholder="Ultimo Nome" name="lastname" ngModel>
+      </div>
+
+      <div style="display: grid; grid-template-columns: auto auto; column-gap: 10px;">
+        <select class="form-input" name="gender" ngModel>
+          <option value="" disabled></option>
+          <option value="0">Feminino</option>
+          <option value="1">Masculino</option>
+        </select>
+
+        <div class="grid-dp">
+          <input class="form-input"  matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" dateFormat="yyyy-MM-dd"  name="birthdate" ngModel>
+         <!--  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
+          <button (click)="picker.open()" class="datepicker-button">
+          <fa-icon icon="calendar-days"></fa-icon>
+          </button>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+      </div>
+
+      <div class="grid-wh">
+        <input type="text" class="form-input" placeholder="Enter peso" name="weight" ngModel>
+        <input type="text" class="form-input" placeholder="Enter altura" name="height" ngModel>
+      </div>
+    </form>
+    <div *ngIf="error!=''">
+      {{error}}
+    </div>
+    <button class="form-button" (click)="signUp()"> sign up</button>
+
+  </div>
+
+  <div class="signup">
+    <h1>LOGIN</h1>
+    <form #loginForm="ngForm" class="common-form">
+      <input type="text" class="form-input" placeholder="Enter username" name="username" ngModel>
+      <input type="password" class="form-input" placeholder="Enter password" name="password" ngModel>
+
+    </form>
+    <button class="form-button" (click)="onLoginClick()"> sign up</button>
+  </div>
+</div>

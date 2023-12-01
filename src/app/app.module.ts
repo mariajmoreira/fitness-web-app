@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +16,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar'
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 import { DietPlannerComponent } from './components/diet-planner/diet-planner/diet-planner.component';
 import { MealPlannerComponent } from './components/diet-planner/meal-planner/meal-planner.component';
 import { MenuSidebarComponent } from './components/sidebar/menu-sidebar/menu-sidebar.component';
@@ -31,7 +34,16 @@ import { PieChartComponent } from './shared-components/charts/pie-chart/pie-char
 import { ProteinChartComponent } from './shared-components/charts/protein-chart/protein-chart.component';
 import { FatsChartComponent } from './shared-components/charts/fats-chart/fats-chart.component';
 import { CarbsChartComponent } from './shared-components/charts/carbs-chart/carbs-chart.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { Route, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
+
+const routes: Route[] = [
+  { path: '', component: AuthComponent},
+  { path: 'home', component: HomeComponent}
+]
 
 @NgModule({
   declarations: [
@@ -48,9 +60,12 @@ import { CarbsChartComponent } from './shared-components/charts/carbs-chart/carb
     PieChartComponent,
     ProteinChartComponent,
     FatsChartComponent,
-    CarbsChartComponent
+    CarbsChartComponent,
+    AuthComponent,
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -61,7 +76,11 @@ import { CarbsChartComponent } from './shared-components/charts/carbs-chart/carb
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatExpansionModule,
+    MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
 
   providers: [],
@@ -72,3 +91,4 @@ export class AppModule {
     library.addIconPacks(fas, far);
   }
 }
+

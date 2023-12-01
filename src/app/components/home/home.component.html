@@ -1,0 +1,26 @@
+
+<div class="app-container">
+<div class="topbar-container">
+    <app-topbar [title]="'fitnessapp'" ></app-topbar>
+  </div>
+
+<div class="main-area-container" >
+  <div class="sidebar-container">
+    <app-menu-sidebar></app-menu-sidebar>
+  </div>
+  <div *ngIf="client.type.includes('coach') " class="diet-planner-container">
+    <app-diet-planner [loaded_food]="loaded_food" [goal]="goal"></app-diet-planner>
+  </div>
+  <ng-template #loading>
+    Loading stuff...
+  </ng-template>
+  <div *ngIf="client.type.includes('lifestyle')" class="diet-planner-container">
+    <app-client-diet [client]="client" [diet]="diet"></app-client-diet>
+  </div>
+  <div>
+    <app-toolbar [user]="client" [goal]="goal"></app-toolbar>
+  </div>
+</div>
+
+
+</div>

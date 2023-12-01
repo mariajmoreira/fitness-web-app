@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output,Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from 'src/app/resources/api.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,6 +10,7 @@ import { Component, EventEmitter, Output,Input } from '@angular/core';
 export class ToolbarComponent {
 
   @Input() goal;
+  @Input() user;
 
   protein :number=0;
   fats :number=0;
@@ -19,6 +22,27 @@ export class ToolbarComponent {
   @Output() carbsSetEvent = new EventEmitter<number>();
   @Output() fatsSetEvent = new EventEmitter<number>();
 
+  panelOpenState = false;
+
+  tmb$?: Observable<any>
+
+  constructor(private apiService:ApiService){
+
+  }
+
+  ngOnInit(){
+   this.tmb$= this.apiService.getTMB('65', '160', '23', 'female')
+  }
+
+    calculateTMB(){
+    /* this.apiService.getTMB('65', '160', '23', 'female').subscribe(
+      (response)=>{
+        console.log(`response:` + JSON.stringify(response));
+        this.tmb$=response
+      }
+    ) */
+
+  }
 
   sendDietInfo(){
     this.calorieSetEvent.emit(this.calories)

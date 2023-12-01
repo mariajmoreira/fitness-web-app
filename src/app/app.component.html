@@ -1,26 +1,7 @@
 
+<!-- <div>
+  <app-auth></app-auth>
+</div> -->
 
 
-
-<div class="app-container">
-  <div class="topbar-container">
-    <app-topbar></app-topbar>
-  </div>
-
-  <div class="main-area-container">
-  <div class="sidebar-container">
-    <app-menu-sidebar></app-menu-sidebar>
-  </div>
-  <div *ngIf="user.type==2" class="diet-planner-container">
-    <app-diet-planner [loaded_food]="loaded_food" [goal]="goal"></app-diet-planner>
-  </div>
-  <div *ngIf="user.type==0" class="diet-planner-container">
-    <app-client-diet [user]="user"></app-client-diet>
-  </div>
-  <div>
-    <app-toolbar [goal]="diet.goal"></app-toolbar>
-  </div>
-</div>
-
-
-</div>
+<router-outlet></router-outlet>

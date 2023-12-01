@@ -20,7 +20,7 @@ data = {
   labels: [
   ],
   datasets: [{
-    label: 'My First Dataset',
+    label: '',
     data: [1],
     backgroundColor: [
       '#8d8d8d'
@@ -40,7 +40,20 @@ ngOnInit(): void {
     data: this.data,
     options: {
       aspectRatio:2.5,
-      maintainAspectRatio:false
+      maintainAspectRatio:false,
+      elements: {
+        arc: {
+          borderWidth:2,
+          borderColor: '#1B1C1F'
+        }
+      },
+      plugins: {
+        tooltip: {
+          enabled:false,
+
+        }
+      },
+
     }
 
   });
@@ -59,6 +72,7 @@ ngOnChanges(){
 createChart(){
 if(this.protein!=0){
   this.data.datasets[0].data = [this.protein,this.fats,this.carbs]
+ /*  this.data.datasets[0].label = ['Protein','Fats','Carbs'] */
  // alert(JSON.stringify(this.data))
 
   this.data.datasets[0].backgroundColor=[
@@ -80,8 +94,16 @@ if(this.protein!=0){
       elements: {
         arc: {
           borderWidth:0,
+          borderColor: '#1B1C1F'
         }
-      }
+      },
+      plugins: {
+        tooltip: {
+          enabled:false,
+
+        }
+      },
+
     }
 
   });

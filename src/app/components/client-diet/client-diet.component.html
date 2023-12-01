@@ -5,10 +5,10 @@
 <h2>{{user.diet.meals|json}}</h2> -->
 <div class="client-diet">
   <div class="client-diet-header">
-    <h2>{{user.diet.name}}</h2>
+    <h2>{{diet.name}}</h2>
   </div>
 
-  <div *ngFor="let meal of user.diet.meals" class="client-diet-meal mb-3">
+  <div *ngFor="let meal of diet.meals" class="client-diet-meal mb-3">
     <div class="meal-header">
       {{meal.name}}
     </div>

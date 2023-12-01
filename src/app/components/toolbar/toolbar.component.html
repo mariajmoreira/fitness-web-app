@@ -1,11 +1,30 @@
-<div class="toolbar-container">
+<div class="toolbar-container" *ngIf="user">
 
-  <div class="client-info">
-    <div>Carolina machado</div>
-    <div>Peso:</div>
-    <div>Altura:</div>
-    <div>Idade:</div>
+  <div class="client-info-container">
+    <div class="avatar">
+      <img src="../../../assets/avatar.jpg" alt="">
+      <div>
+        <div class="client-name">
+          Carolina Machado
+        </div >
+        <div class="client-type">Lifestyle Client</div>
+      </div>
+    </div>
+
+<div class="client-info mt-3">
+  <div>Peso: {{user.weight}} kg</div>
+  <div>Altura: {{user.height}} m</div>
+  <div>Idade: {{user.age}} anos</div>
+</div>
   </div>
+
+<!--   <div class="calculation-container">
+    <div *ngIf="(tmb$ | async) as tmb; ">
+      {{tmb}}
+    </div>
+  </div> -->
+
+
 
   <div class="macro-distribution">
     <div class="macro-inputs">
@@ -29,9 +48,10 @@
         <input type="number" id="carbs" class="macro-input" [(ngModel)]="goal.carbs">
       </div>
     </div>
+    <div class="chart-container mt-3">
+      <app-pie-chart [protein]="goal.protein" [fats]="goal.fats" [carbs]="goal.carbs"></app-pie-chart>
+    </div>
   </div>
 
-  <div class="chart-container mt-3">
-    <app-pie-chart [protein]="goal.protein" [fats]="goal.fats" [carbs]="goal.carbs"></app-pie-chart>
-  </div>
+
 </div>

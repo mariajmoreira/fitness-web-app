@@ -1,0 +1,51 @@
+.auth
+{
+  background-color: aqua;
+}
+
+.signup{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 30px;
+  justify-content: center;
+}
+
+.common-form{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap:20px;
+}
+
+
+
+    .grid-dp{
+      display: grid;
+      grid-template-columns: 85% 5%;
+      column-gap: 5px;
+
+    }
+
+.grid-wh{
+  display: grid;
+  grid-template-columns: auto auto ;
+  column-gap:20px;
+}
+
+.form-input{
+  border: 1px solid var(--dark-grey);
+  height: 30px;
+  padding-left: 15px;
+  color:var(--dark-grey)
+}
+
+.form-button{
+  border: 1px solid var(--dark-grey-secondary);
+  height: 30px;
+  padding-left: 15px;
+  background-color:var(--grey);
+  color:white;
+}
+
+.datepicker-button{
+  width:fit-content;
+}

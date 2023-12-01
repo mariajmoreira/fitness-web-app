@@ -1,17 +1,80 @@
-.client-info{
-  color:white
-}
-
 .toolbar-container{
   width: 100%;
-  background-color: var(--dark-grey-secondary);
+/*   background-color: var(--dark-grey-secondary); */
   border-radius:5px;
-  min-height: 600px
+  min-height: 50rem;
+  padding: 20px;
+  border-left: 1px solid var(--border);
+
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 20px;
+}
+
+.client-info-container{
+  color:white;
+  border-radius:20px;
+ background-color: var(--dark-grey-secondary);
+ height: fit-content;
+ padding: 20px 0px 20px 0px;
+ display: grid;
+ grid-template-rows: auto auto;
+ justify-content: center;
+
+}
+
+.client-name{
+  font-size: large;
+  font-weight: Bold;
+}
+
+.client-type{
+  font-size: small;
+  color:var(--border)
+}
+
+.client-info{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  justify-content:center;
+}
+
+ .avatar{
+  padding: 0px 0px 20px 0px;
+display: grid;
+grid-template-columns: auto auto;
+column-gap: 20px;
+justify-content: start;
+border-bottom: 1px solid var(--border);
+}
+
+.avatar >img{
+  width: 80px;
+  height:80px;
+  border-radius: 10px;
+}
+
+.client-info{
+
+}
+
+
+
+.calculation-container{
+  padding: 20px 0px 20px 0px;
+  color:white;
+  border-radius:20px;
+ background-color: var(--dark-grey-secondary);
+ height: fit-content;
 }
 
 .macro-distribution{
+  padding: 20px 0px 20px 0px;
   color:white;
-
+  border-radius:20px;
+ background-color: var(--dark-grey-secondary);
+ height: fit-content;
 }
 
 .macro-inputs{
